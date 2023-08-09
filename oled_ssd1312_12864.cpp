@@ -60,13 +60,12 @@ void ErOLED::setCursorXY(byte X, byte Y){
 }
 
 void ErOLED::drawBitmap(const byte *bitmap, byte X, byte Y, uint8_t w, uint8_t h)
-{   
-  uint8_t i,j;
+{
   setCursorXY(X, Y);
   digitalWrite(OLED_DC, HIGH);
-  for (i = 0; i < h; i++) {         
+  for (uint8_t i = 0; i < h; i++) {         
           
-      for(j = 0; j< w; j++ ) {
+      for(uint8_t j = 0; j< w; j++ ) {
         if (bitmap==NULL)
           SPIWrite(0); // clear area
         else

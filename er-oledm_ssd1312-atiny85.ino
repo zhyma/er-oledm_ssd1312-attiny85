@@ -28,7 +28,7 @@ Test OK : Arduino DUE,Arduino mega2560,Arduino UNO Board
 #include "animation.h"
 #include "bitmap.h"
 
-uint8_t oled_buf[WIDTH * HEIGHT / 8];
+//uint8_t oled_buf[WIDTH * HEIGHT / 8];
 
 void setup() {
   oled.init();
@@ -48,13 +48,13 @@ void loop() {
     countDown -= 1;
   }
 
-  oled.sendCommand(0xA7);
+//  oled.sendCommand(0xA7);
   countDown = 50;
   sweating_init();
   while(countDown > 0){
     sweating_loop(countDown);
     countDown -= 1;
   }
-  oled.sendCommand(0xA6);
+//  oled.sendCommand(0xA6);
   
 }
