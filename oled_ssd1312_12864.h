@@ -50,27 +50,15 @@ EastRising Technology Co.,LTD
 
 #define OLED_INIT_LEN   14
 const uint8_t OLED_INIT_CMD[] PROGMEM = {
+  0xAE,
   0xA8, 0x3F,       // set multiplex (HEIGHT-1): 0x1F for 128x32, 0x3F for 128x64 
   0x22, 0x00, 0x03, // set min and max page
   0x20, 0x00,       // set horizontal memory addressing mode
   0xDA, 0x10,       // set COM pins hardware configuration to sequential
   0x8D, 0x12,       // enable charge pump
-  0xAF,             // switch on OLED
-  0xA1, 0xC8        // flip the screen
+  0xA0, 0xC8,       // flip the screen
+//  0xAF              // switch on OLED
 };
-
-///**** "working set up" backup ****/
-//#define OLED_INIT_LEN   14
-//const uint8_t OLED_INIT_CMD[] PROGMEM = {
-//  0xA8, 0x3F,       // set multiplex (HEIGHT-1): 0x1F for 128x32, 0x3F for 128x64 
-//  0x22, 0x00, 0x03, // set min and max page
-//  0x20, 0x00,       // set horizontal memory addressing mode
-//  0xDA, 0x02,       // set COM pins hardware configuration to sequential
-//  0x8D, 0x12,       // enable charge pump
-//  0xAF,             // switch on OLED
-//  0xA1, 0xC8        // flip the screen
-//};
-
 
 class ErOLED {
   public:

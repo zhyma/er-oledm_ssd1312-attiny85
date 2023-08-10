@@ -46,7 +46,9 @@ void ErOLED::init()
     for (uint8_t i = 0; i < OLED_INIT_LEN; i++){
       sendCommand(pgm_read_byte(&OLED_INIT_CMD[i]));
     }
-
+    //Clear the display before start
+    oled.drawBitmap(NULL, 0, 0, 128, 8);
+    sendCommand(0xAF);// switch on OLED
     delay(100);
 }
 
